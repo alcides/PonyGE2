@@ -22,7 +22,19 @@ def preprocess():
 def evolve():
     return params['SEARCH_LOOP']()
 
-def mane():
+def timer_mane():
+    """ Run program """
+    algorithm = preprocess()
+    individuals = evolve()
+    
+    # Print final review
+    # get_stats(individuals, end=True)
+    
+    f = open(f"results/ponyge/{params['FILE_PATH'].split('/')[-2]}_timer.csv", "a")
+    f.write(f"\n{individuals[0].fitness}")
+    f.close()
+
+def generations_mane():
     """ Run program """
     processing_time = perf_counter_ns()
     algorithm = preprocess()
@@ -35,11 +47,15 @@ def mane():
     
     # Print final review
     # get_stats(individuals, end=True)
-
-    f = open(f"results/ponyge/temp_times.csv", "a")
+    f = open(f"results/ponyge/{params['FILE_PATH'].split('/')[-2]}_generations.csv", "a")
     f.write(f"\n{processing_time},{evolution_time}")
     f.close()
 
+def mane():
+    if 'search_loop_with_timer' in sys.argv:
+        timer_mane()
+    else:
+        generations_mane()
 
 if __name__ == "__main__":
     mane()

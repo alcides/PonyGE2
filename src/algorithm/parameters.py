@@ -270,6 +270,9 @@ def set_params(command_line_args, create_files=True):
     # NOTE that command line arguments overwrite all previously set parameters.
     params.update(cmd_args)
 
+    if 'SEARCH_LOOP' in cmd_args:
+        params['SEARCH_LOOP'] = cmd_args['SEARCH_LOOP']
+
     if params['LOAD_STATE']:
         # Load run from state.
         from utilities.algorithm.state import load_state
