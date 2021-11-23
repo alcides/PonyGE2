@@ -5,7 +5,7 @@ CROSSOVER_PROBABILITY:  0.75
 DEBUG:                  False
 GENERATIONS:            50
 MAX_GENOME_LENGTH:      500
-GRAMMAR_FILE:           pymax.pybnf
+GRAMMAR_FILE:           PonyGE2/grammars/pymax.pybnf
 INITIALISATION:         PI_grow
 INVALID_SELECTION:      False
 MAX_INIT_TREE_DEPTH:    10
@@ -17,3 +17,4 @@ REPLACEMENT:            generational
 SELECTION:              tournament
 TOURNAMENT_SIZE:        2
 VERBOSE:                False
+EXPERIMENT_NAME:        results/ponyge/pymax/
