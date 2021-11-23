@@ -14,15 +14,26 @@ check_python_version()
 from stats.stats import get_stats
 from algorithm.parameters import params, set_params
 import sys
+import copy
 
+default_params = copy.deepcopy(params)
+
+def preprocess(parameters):
+    set_params(parameters)
+
+def evolve():
+    return params['SEARCH_LOOP']()
+    
+def reset_ponyge():
+    params = default_params
 
 def mane():
     """ Run program """
-    set_params(sys.argv[1:])  # exclude the ponyge.py arg itself
+    preprocess(sys.argv[1:])   # exclude the ponyge.py arg itself
 
     # Run evolution
-    individuals = params['SEARCH_LOOP']()
-
+    individuals = evolve()
+    
     # Print final review
     get_stats(individuals, end=True)
 

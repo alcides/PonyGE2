@@ -121,11 +121,11 @@ def parse_stats_from_runs(experiment_name):
 
     # Since results files are not kept in source directory, need to escape
     # one folder.
-    file_path = path.join(getcwd(), "..", "results")
-
+    file_path = "results/"
+    
     # Check for use of experiment manager.
     if experiment_name:
-        file_path = path.join(file_path, experiment_name)
+        file_path = experiment_name
 
     else:
         s = "scripts.parse_stats.parse_stats_from_runs\n" \
