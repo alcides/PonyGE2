@@ -25,6 +25,8 @@ class Worker(mp.Process):
                                (2 ** 30, 2 ** 30))  # 2 ** 30 == 1GB in bytes
         except ImportError:
             pass
+        except ValueError:
+            pass # In MacOS Catalina and newer, setting the stack results in a ValueError.
         # END LINUX:
         while True:
             exception = None
