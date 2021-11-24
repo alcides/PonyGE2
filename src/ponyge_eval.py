@@ -34,6 +34,9 @@ def timer_mane():
     f.write(f"\n{individuals[0].fitness}")
     f.close()
 
+    get_stats(individuals, end=True)
+
+
 def generations_mane():
     """ Run program """
     processing_time = perf_counter_ns()
@@ -50,6 +53,8 @@ def generations_mane():
     f = open(f"results/ponyge/{params['FILE_PATH'].split('/')[-2]}_generations.csv", "a")
     f.write(f"\n{processing_time},{evolution_time}")
     f.close()
+
+    get_stats(individuals, end=True)
 
 def mane():
     if 'search_loop_with_timer' in sys.argv:
