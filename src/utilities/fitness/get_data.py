@@ -92,11 +92,11 @@ def get_data(train, test):
     """
 
     # Get the path to the training dataset.
-    train_set = path.join("..", "datasets", train)
+    train_set = train
 
     if test:
         # Get the path to the testing dataset.
-        test_set = path.join("..", "datasets", test)
+        test_set = test
 
     else:
         # There is no testing dataset used.
