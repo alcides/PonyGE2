@@ -18,3 +18,4 @@ SELECTION:              tournament
 TOURNAMENT_SIZE:        2
 VERBOSE:                True
 TARGET_SEED_FOLDER:     regex_improvement/scientific_number
+EXPERIMENT_NAME:        results/ponyge/regex_improvement/
