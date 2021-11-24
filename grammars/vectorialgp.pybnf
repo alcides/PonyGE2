@@ -1,0 +1,13 @@
+# see fitness/vectorialgp.py for docs.
+
+<p> ::= XXX_output_XXX = <s>
+<s> ::= <literal> | <variable> | <s> + <s> | np.mean(<v>)
+
+<variable> ::= line[<si>]
+<si> ::= 0 | 1
+<literal> ::= <d>.<d> | -<d>.<d>
+
+<v> ::= line[<sv>] | np.cumsum(<v>)
+<sv> ::= 2 | 3
+
+<d> ::= GE_RANGE:10
