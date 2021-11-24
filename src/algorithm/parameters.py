@@ -264,11 +264,14 @@ def set_params(command_line_args, create_files=True):
     # LOAD PARAMETERS FILE
     # NOTE that the parameters file overwrites all previously set parameters.
     if 'PARAMETERS' in cmd_args:
-        load_params(path.join("..", "parameters", cmd_args['PARAMETERS']))
+        load_params(cmd_args['PARAMETERS'])
 
     # Join original params dictionary with command line specified arguments.
     # NOTE that command line arguments overwrite all previously set parameters.
     params.update(cmd_args)
+
+    if 'SEARCH_LOOP' in cmd_args:
+        params['SEARCH_LOOP'] = cmd_args['SEARCH_LOOP']
 
     if params['LOAD_STATE']:
         # Load run from state.
@@ -349,8 +352,7 @@ def set_params(command_line_args, create_files=True):
                     raise Exception(s)
 
         # Parse grammar file and set grammar class.
-        params['BNF_GRAMMAR'] = grammar.Grammar(
-            path.join("..", "grammars", params['GRAMMAR_FILE']))
+        params['BNF_GRAMMAR'] = grammar.Grammar(params['GRAMMAR_FILE'])
 
         # If OPTIMIZE_CONSTANTS, check that the grammar is suitable
         if params['OPTIMIZE_CONSTANTS']:
