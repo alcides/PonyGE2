@@ -11,16 +11,19 @@ class game_of_life(supervised_learning):
     """Fitness function for game_of_life classifier.
 
     The candidate solutions are like this:
-
-    (3 if x[0] == 2 else (5 if (x[1] == 1 and x[2] == 1) else 9))
+    
+    (x[:, 0, 1] | ((x[:, 0, -1] | ((x[:, -1, -1] & x[:, 1, 1])))))  
 
     The possible outputs are 0 and 1. The inputs (3, 3) are composed
     of 0 and 1s. The variables x[i] are from -1 to 1.
 
     An example command-line is then:
+    
+    python ponyge.py --parameters ../parameters/game_of_life
+    
+    or setting the parameters manually:
 
-    python ponyge.py --generations 10 --population 10 \
-    --fitness supervised_learning.game_of_life \
+    python ponyge.py --fitness supervised_learning.game_of_life \
     --grammar supervised_learning/game_of_life.bnf \ 
     --dataset_train ../datasets/GameOfLife/Train.csv \
     --dataset_test ../datasets/GameOfLife/Test.csv \
@@ -40,26 +43,7 @@ class game_of_life(supervised_learning):
 
         # Set error metric if it's not set already.
         if params['ERROR_METRIC'] is None:
-            params['ERROR_METRIC'] = sklearn_accuracy
+            params['ERROR_METRIC'] = sklearn_f1
 
         params['ERROR_METRIC'].maximise = True
         self.maximize = params['ERROR_METRIC'].maximise
-
-    # def evaluate(self, ind, **kwargs):
-
-    #     dist = kwargs.get('dist', 'training')
-
-    #     if dist == "training":
-    #         # Set training datasets.
-    #         x = self.training_in
-    #         y = self.training_exp
-
-    #     elif dist == "test":
-    #         # Set test datasets.
-    #         x = self.test_in
-    #         y = self.test_exp
-
-    #     else:
-    #         raise ValueError("Unknown dist: " + dist)
-        
-    #     print(x.shape)
