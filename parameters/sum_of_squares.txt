@@ -20,3 +20,4 @@ REPLACEMENT:            generational
 SELECTION:              tournament
 TOURNAMENT_SIZE:        5
 VERBOSE:                False
+EXPERIMENT_NAME:         results/ponyge/sum_of_squares/
