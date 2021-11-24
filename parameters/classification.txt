@@ -2,6 +2,7 @@ CACHE:                  True
 CODON_SIZE:             100000
 CROSSOVER:              variable_onepoint
 CROSSOVER_PROBABILITY:  0.75
+MUTATION_PROBABILITY:	0.01
 DATASET_TRAIN:          PonyGE2/datasets/Banknote/Train.csv
 DATASET_TEST:           PonyGE2/datasets/Banknote/Test.csv
 DEBUG:                  False
@@ -18,6 +19,7 @@ POPULATION_SIZE:        500
 FITNESS_FUNCTION:       supervised_learning.classification
 REPLACEMENT:            generational
 SELECTION:              tournament
+ELITES                  5
 TOURNAMENT_SIZE:        2
 VERBOSE: 				False
 EXPERIMENT_NAME:        results/ponyge/classification/

@@ -2,6 +2,7 @@ CACHE:                  True
 CODON_SIZE:             100000
 CROSSOVER:              variable_onepoint
 CROSSOVER_PROBABILITY:  0.75
+MUTATION_PROBABILITY:   0.01
 DATASET_TRAIN:          PonyGE2/datasets/Vladislavleva4/Train.txt
 DATASET_TEST:           PonyGE2/datasets/Vladislavleva4/Test.txt
 DEBUG:                  False
@@ -17,6 +18,7 @@ MUTATION:               int_flip_per_codon
 POPULATION_SIZE:        500
 FITNESS_FUNCTION:       supervised_learning.regression
 REPLACEMENT:            generational
+ELITES                  5
 SELECTION:              tournament
 TOURNAMENT_SIZE:        2
 VERBOSE:                False
