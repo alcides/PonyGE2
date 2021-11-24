@@ -16,5 +16,5 @@ FITNESS_FUNCTION:       vectorialgp
 REPLACEMENT:            generational
 SELECTION:              tournament
 TOURNAMENT_SIZE:        2
-VERBOSE:                False
+VERBOSE:                True
 EXPERIMENT_NAME:        results/ponyge/vectorialgp/
