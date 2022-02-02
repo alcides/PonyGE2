@@ -1,4 +1,4 @@
-CACHE:                   True
+CACHE:                   False
 CROSSOVER_PROBABILITY:   0.75
 DATASET_DELIMITER:       ,
 DATASET_TEST:            PonyGE2/datasets/GameOfLife/Test.csv
