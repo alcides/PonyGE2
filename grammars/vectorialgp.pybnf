@@ -5,7 +5,7 @@
 
 <variable> ::= line[<si>]
 <si> ::= 0 | 1
-<literal> ::= <d>.<d> | -<d>.<d>
+<literal> ::= <d> | -<d>
 
 <v> ::= line[<sv>] | np.cumsum(<v>) | np.add(<s>, <v>) | np.subtract(<s>, <v>) | cummax(<v>) | cummin(<v>)
 <sv> ::= 2 | 3
