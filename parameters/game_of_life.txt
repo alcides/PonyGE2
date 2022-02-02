@@ -13,7 +13,7 @@ MAX_GENOME_LENGTH:       500
 GRAMMAR_FILE:            PonyGE2/grammars/supervised_learning/game_of_life.bnf
 INITIALISATION:          operators.initialisation.PI_grow
 MAX_GENOME_LENGTH:       500
-MAX_INIT_TREE_DEPTH:     10
+MAX_INIT_TREE_DEPTH:     15
 MAX_TREE_DEPTH:          15
 MAX_WRAPS:               0
 MUTATION:                operators.mutation.int_flip_per_codon

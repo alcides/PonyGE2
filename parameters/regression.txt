@@ -9,11 +9,11 @@ DEBUG:                  False
 ERROR_METRIC:           mse
 GENERATIONS:            50
 MAX_GENOME_LENGTH:      500
-GRAMMAR_FILE:           PonyGE2/grammars/supervised_learning/Vladislavleva4.bnf
+GRAMMAR_FILE:           PonyGE2/grammars/supervised_learning/Vladislavleva4_alligned_with_gengy.bnf
 INITIALISATION:         PI_grow
 INVALID_SELECTION:      False
-MAX_INIT_TREE_DEPTH:    10
-MAX_TREE_DEPTH:         17
+MAX_INIT_TREE_DEPTH:    15
+MAX_TREE_DEPTH:         15
 MUTATION:               int_flip_per_codon
 POPULATION_SIZE:        500
 FITNESS_FUNCTION:       supervised_learning.regression
