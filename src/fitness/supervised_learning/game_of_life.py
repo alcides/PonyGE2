@@ -5,7 +5,7 @@ from fitness.supervised_learning.supervised_learning import supervised_learning
 from sklearn.metrics import accuracy_score as sklearn_accuracy
 from sklearn.metrics import f1_score as sklearn_f1
 from utilities.fitness.get_data import get_data
-
+from utilities.fitness.error_metric import f1_score
 
 class game_of_life(supervised_learning):
     """Fitness function for game_of_life classifier.
@@ -40,10 +40,8 @@ class game_of_life(supervised_learning):
 
         self.training_in = self.training_in.astype(int)
         self.test_in = self.test_in.astype(int)
-
-        # Set error metric if it's not set already.
+        
         if params['ERROR_METRIC'] is None:
-            params['ERROR_METRIC'] = sklearn_f1
+            params['ERROR_METRIC'] = f1_score
 
-        params['ERROR_METRIC'].maximise = True
-        self.maximize = params['ERROR_METRIC'].maximise
+        self.maximise = params['ERROR_METRIC'].maximise
